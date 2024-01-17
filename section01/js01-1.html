@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a, b, c) {
+    let answer;
+
+    if(a > b){
+      if(b > c){
+        answer = c
+        return answer
+      }else{
+        answer = b
+        return answer
+      }
+    }else {
+      if (a > c){
+        answer = c
+        return answer
+      }else {
+        answer = b
+        return answer
+      }
+    }
+  }
+
+  console.log(solution(100, 300, 300));
+</script>
+</body>
+</html>
