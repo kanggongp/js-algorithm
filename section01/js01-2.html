@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a, b, c) {
+    let answer
+    let bigNum
+    let smallNumbers
+    // 2개의 합이 한개보다 커야 한다
+    if(a > b) bigNum = a
+    else bigNum = b
+    if(bigNum < c) bigNum = c
+
+    smallNumbers = a + b + c - bigNum
+    if(smallNumbers > bigNum) answer = 'YES'
+    else answer = 'NO'
+
+    return answer
+  }
+
+  console.log(solution(20, 32, 20));
+</script>
+</body>
+</html>
