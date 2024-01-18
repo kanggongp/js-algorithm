@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(str) {
+    let answer = [];
+
+    for (let value of str){
+      if (!answer.includes(value)){
+        answer.push(value)
+      }
+    }
+
+    return answer
+  }
+
+  function solution2(str) {
+    let answer = '';
+
+    for (let i=0; i<str.length; i++){
+      if(i === str.indexOf(str[i])) answer += str[i]
+    }
+
+
+    return answer
+  }
+  console.log(solution2('ksekkset'));
+</script>
+</body>
+</html>
