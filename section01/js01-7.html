@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(day, carArr) {
+    let answer = 0;
+
+    for (let value of carArr){
+      if(value % 10 === day){
+        answer += 1
+      }
+    }
+
+    return answer
+  }
+
+  function solution2() {
+
+    // for of 반복문은 단순 value 검사가 필요한 경우 사용하면 편함, index 몰라도 될 때
+
+    // forEach, map, filter, reduce
+    // 위 함수 다 첫번쨰 인자로 콜백함수를 반드시 받아야 한다
+    // 두번쨰 인수 this 객체 : 순환을 돌때 특정 객체에 접근해서 사용해야 하는 경우 필요
+
+    let a = [10, 13, 15, 17];
+
+    a.forEach((value, index) => {
+      console.log(value, index, this)
+      console.log(this.length) // [1, 2] 배열을 가져오지 못함
+
+      // 콘솔을 찍어보니 this 는 window 객체를 바라고 잇었음
+    }, [1,2])
+
+    a.forEach(function (v, i){
+      console.log(v, i, this);
+    }, [1, 2]);
+
+    // map 은 요쇼들을 탐색하면서 새로운 배열을 생성한다. 그리고 대상이 되는 배열의 길이와 무조건 같아야 한다
+
+    let b = a.map((value, index) => {
+      return value * index
+    })
+
+    console.log(b)
+
+    let c = a.map((value, index) => {
+      if(index % 2 === 0){
+        return value * index
+      }
+    })
+
+    console.log(c)
+
+    let d = a.filter((value, index) => {
+      return value % 2 === 0
+    })
+
+    console.log(d)
+
+    let e = a.reduce(function (acc, value){
+      return acc + value;
+    },0)
+
+    console.log(e)
+
+    return 0
+
+  }
+
+  let day = 7
+  let carArr = [12, 17, 27, 22, 15, 37, 42]
+  // console.log(solution(day, carArr));
+  console.log(solution2())
+</script>
+</body>
+</html>
