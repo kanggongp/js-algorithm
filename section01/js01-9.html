@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a) {
+    let answer = '';
+
+    for(let value of a){
+      if(value === 'A') answer = answer + '#'
+      else answer = answer + value
+    }
+
+    return answer
+
+  }
+
+  function solution2(a) {
+    let answer = a;
+
+    // 'A' 를 전역적으로 찾아서 '#' 으로 변경해라
+    answer = answer.replace(/A/g, '#');
+
+    return answer
+
+  }
+
+  console.log(solution2('ABCA'));
+</script>
+</body>
+</html>
