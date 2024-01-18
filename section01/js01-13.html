@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a) {
+    let answer = '';
+
+    for(let value of a){
+      if(value === value.toUpperCase()) answer += value.toLowerCase()
+      else answer += value.toUpperCase()
+    }
+
+    return answer
+  }
+
+  console.log(solution('Apple'));
+</script>
+</body>
+</html>
