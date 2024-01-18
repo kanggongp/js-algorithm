@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(strArr) {
+    let answer;
+
+    // for (let i=0; i < strArr.length; i++){
+    //   if(i === strArr.indexOf(strArr[i])) answer.push(strArr[i])
+    // }
+
+    answer = strArr.filter((value, index) => {
+      return index === strArr.indexOf(strArr[index])
+    })
+
+    return answer
+  }
+  let strArr = ['good', 'time', 'good', 'time2', 'student']
+  console.log(solution(strArr));
+</script>
+</body>
+</html>
