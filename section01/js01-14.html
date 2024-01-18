@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(num, arr) {
+    let answer = arr[0];
+
+    for (let value of arr){
+      if (value.length > answer.length) answer = value
+    }
+
+
+    return answer
+  }
+  let num = 5;
+  let arr = ['teacher', 'time', 'student', 'beautiful', 'good']
+  console.log(solution(num, arr));
+</script>
+</body>
+</html>
