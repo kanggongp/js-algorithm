@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a, b, c, d, e, f, g) {
+
+    let answer;
+    let array = Array.of(a, b, c, d, e, f, g)
+
+    array.forEach((value, index) => {
+      if(index === 0){
+        answer = value
+      }else{
+        if(answer > value) answer = value
+      }
+    })
+
+
+
+    // return array
+    return answer
+
+  }
+
+  console.log(solution(10, 123, 500, 7, 9, 11, 13));
+</script>
+</body>
+</html>
