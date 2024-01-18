@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(a) {
+
+    let answer = 0
+
+    for(let i = 0; i < a + 1; i++){
+        // 오른쪽이 다 계산이 된 후 왼쪽에 대입이 된다
+        answer = answer + i
+    }
+
+    return answer
+
+  }
+
+  function solution2(a) {
+
+    let answer = 0;
+
+    for(let i = 1; i <= a; i++){
+      answer = answer + i;
+    }
+
+    return answer;
+
+  }
+
+  console.log(solution(10));
+</script>
+</body>
+</html>
