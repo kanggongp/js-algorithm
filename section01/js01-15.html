@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(str) {
+    let answer;
+    let num = Math.floor(str.length / 2)
+
+
+    if(str.length % 2 === 0){
+      answer = str.substring(num -1, num + 1)
+    }else{
+      answer = str.substring(num, num + 1)
+    }
+
+    return answer
+  }
+  console.log(solution('applek'));
+</script>
+</body>
+</html>
