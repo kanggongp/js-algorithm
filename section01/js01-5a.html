@@ -34,8 +34,18 @@
 
   }
 
-  let arr = [1000, 500, 200, 300, 400, 500];
-  console.log(solution2(arr));
+  function solution3(arr) {
+
+    // 전개 연산자
+    let answer = Math.min(...arr)
+
+
+    return answer
+
+  }
+
+  let arr = [1000, 500, 2000, 300, 400, 500];
+  console.log(solution3(arr));
 </script>
 </body>
 </html>
