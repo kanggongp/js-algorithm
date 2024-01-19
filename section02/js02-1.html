@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(numArr) {
+    let answer
+
+    answer = numArr.filter((value, index) => {
+      if (index === 0){
+        return true
+      }else{
+        if(value > numArr[index-1]){
+          return true
+        }else{
+          return false
+        }
+      }
+    })
+
+    return answer
+  }
+
+  let numArr = [7, 3, 9, 5, 6, 12]
+  console.log(solution(numArr));
+</script>
+</body>
+</html>
