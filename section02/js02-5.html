@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(arr) {
+    let answer = []
+
+    for(let i=0; i<arr.length; i++){
+      answer.push(1)
+
+      for(let k=i+1; k<arr.length; k++){
+        if(arr[i] < arr[k]){
+          answer[i]++
+        }
+      }
+    }
+
+    for(let i=arr.length-1; i>0; i--){
+
+      for(let k=i-1; k>=0; k--){
+        if(arr[i] < arr[k]){
+          answer[i]++
+        }
+      }
+    }
+
+    return answer
+  }
+
+  function solution2(arr) {
+    let answer = []
+
+    let arr2 = Array.from({length: arr.length}, ()=>1)
+
+    console.log(arr2)
+
+    for(let i=0; i<arr.length; i++){
+      answer.push(1)
+      for(let j=0; j<arr.length; j++){
+        if(arr[i] < arr[j]){
+          answer[i]++;
+        }
+      }
+    }
+
+
+    return answer
+  }
+
+  let arr = [87, 92, 92, 100, 76, 92]
+  console.log(solution2(arr));
+</script>
+</body>
+</html>
