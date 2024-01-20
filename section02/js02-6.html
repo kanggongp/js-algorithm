@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(arr) {
+    let answer;
+    let rowSum;
+    let columnSum;
+    let rowMax = 0
+    let columnMax = 0
+    let d1 = 0;
+    let d2 = 0;
+    let d3;
+
+    // 2차워 배열에서 arr.length 는 row 의 길이
+
+    for(let i=0; i<arr.length; i++){
+      rowSum = 0
+
+      for(let j=0; j<arr[i].length; j++){
+        rowSum += arr[i][j]
+      }
+
+      if(rowSum > rowMax){
+        rowMax = rowSum
+      }
+    }
+
+    for(let i=0; i<arr[0].length; i++){
+      columnSum = 0
+
+      for(let j=0; j<arr.length; j++){
+        columnSum += arr[j][i]
+      }
+
+      if(columnSum > columnMax){
+        columnMax = columnSum
+      }
+    }
+
+    if(rowMax > columnMax) answer = rowMax
+    else answer = columnMax
+
+    for(let i=0; i<arr.length; i++){
+      d1 += arr[i][i]
+      d2 += arr[i][arr.length - i - 1]
+    }
+
+    if(d1 > d2) d3 = d1
+    else d3 = d2
+
+    if(answer < d3) answer = d3
+
+
+    return answer
+  }
+  let arr = [
+    [10, 13, 10, 12, 15],
+    [12, 39, 30, 23, 11],
+    [11, 25, 50, 53, 15],
+    [19, 27, 29, 37, 27],
+    [19, 13, 30, 13, 19],
+  ]
+  console.log(solution(arr));
+</script>
+</body>
+</html>
