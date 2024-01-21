@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(str) {
+    let answer = 'YES'
+
+    str = str.toLowerCase().replace(/[^a-z]/g, '')
+
+    // reverse 를 사용하기 위해서는 반드시 배열로 먼저 만들어야 한다
+
+    console.log(str)
+    console.log(str.split('').reverse().join(''))
+    if(str !== str.split('').reverse().join('')) answer = 'No'
+
+    return answer
+  }
+
+  let str = 'found7, time: study; Yduts; emit, 7Dnuof'
+  console.log(solution(str));
+</script>
+</body>
+</html>
