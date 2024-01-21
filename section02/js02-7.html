@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(arr) {
+    let answer = 0;
+    let parentLength = arr.length + 2
+
+    let parentArr = []
+
+    // 배열 생성
+    for (let i=0; i<parentLength; i++){
+      parentArr[i] = []
+      for (let j=0; j<parentLength; j++){
+        parentArr[i][j] = 0
+      }
+    }
+
+    // 배열 변경
+    for (let i=1; i<parentLength-1; i++){
+      for (let j=1; j<parentLength-1; j++){
+        parentArr[i][j] = arr[i-1][j-1]
+      }
+    }
+
+    for (let i=1; i<parentLength-1; i++){
+      for (let j=1; j<parentLength-1; j++){
+        if(parentArr[i][j] > parentArr[i][j-1] && parentArr[i][j] > parentArr[i][j+1] ){
+          if(parentArr[i][j] > parentArr[i-1][j] && parentArr[i][j] > parentArr[i+1][j] ){
+            answer++;
+          }
+        }
+      }
+    }
+
+
+    return answer
+  }
+
+  function solution2(arr) {
+    let answer = 0;
+    let arrLength = arr.length
+    let dx = [-1, 0, 1, 0];
+    let dy = [0, 1, 0, -1];
+
+
+    for(let i=0; i<arrLength; i++){
+      for(let j=0; j<arrLength; j++){
+        let flag = 1;
+
+        for(let k=0; k<arrLength; k++){
+
+          let dxNum = i + dx[k];
+          let dyNum = j + dy[k]
+
+          if(dxNum >= 0 && dxNum < arrLength && dyNum >= 0 && dyNum < arrLength){
+            if(arr[i][j] < arr[dxNum][dyNum]){
+              flag = 0
+              break;
+            }
+          }
+        }
+
+        if(flag) answer++;
+
+      }
+    }
+
+
+
+    return answer
+  }
+
+  let arr = [
+    [5, 3, 7, 2, 3],
+    [3, 7, 1, 6, 1],
+    [7, 2, 5, 3, 4],
+    [4, 3, 6, 4, 1],
+    [8, 7, 3, 5, 2],
+  ]
+  console.log(solution2(arr));
+</script>
+</body>
+</html>
