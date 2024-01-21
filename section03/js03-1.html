@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+  function solution(str) {
+    let answer
+    let reverseStr = ''
+
+    let str2 = str.toUpperCase()
+
+    for (let value of str2){
+      reverseStr = value + reverseStr
+    }
+
+    if(reverseStr === str2) answer = 'YES'
+    else answer = 'No'
+
+    return answer
+  }
+
+  function solution2(str) {
+    let answer = 'YES'
+    let strLength = str.length
+    let num = Math.floor(str.length)
+
+    let str2 = str.toUpperCase()
+
+    for (let i=0; i<num; i++){
+      if(str2[i] !== str2[strLength-i-1]){
+        answer = 'NO'
+        break;
+      }
+    }
+
+
+    return answer
+  }
+
+  function solution3(str) {
+    let answer = 'YES'
+    let strLength = str.length
+    let num = Math.floor(str.length)
+    let str2 = str.toUpperCase()
+
+    let arr = str2.split('')
+    console.log(arr)
+
+    let arr2 = arr.reverse()
+    let str3 = arr2.join('')
+
+    console.log(arr2)
+    console.log(str3)
+
+    return answer
+  }
+
+  console.log(solution3('gooGt'));
+</script>
+</body>
+</html>
